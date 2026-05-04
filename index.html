@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light only">
+<meta name="supported-color-schemes" content="light">
+<meta name="theme-color" content="#F2EDE2">
+<title>Innova Pro Painting — Chula Vista's Trusted Painters Since 2014</title>
+<meta name="description" content="Family-run painting in Chula Vista. 10+ years of careful, honest work across the South Bay.">
+
+<!-- 
+  ════════════════════════════════════════════════
+  HOW TO REPLACE PHOTOS WITH CARLOS'S ACTUAL WORK
+  ════════════════════════════════════════════════
+  Search for: data-photo="REPLACE-ME"
+  Each one tells you what kind of photo it should be.
+  
+  To swap: 
+  1. Screenshot photos from Carlos's Instagram (@innova_pro_painting)
+     or his Yelp/Thumbtack page
+  2. Save them to a /images folder next to this file
+  3. Replace the Unsplash URL with: src="images/your-photo.jpg"
+  
+  License: BEFORE deploying, verify on cslb.ca.gov and update.
+  If no license found, delete that line in the footer.
+  ════════════════════════════════════════════════
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    color-scheme: light;
+    --paper: #F2EDE2;
+    --paper-2: #E8E0CF;
+    --paper-3: #DDD2BC;
+    --ink: #14110D;
+    --ink-2: #2B2620;
+    --ink-soft: #4D453B;
+    --ink-mute: #7A7064;
+    --rust: #C2552A;
+    --rust-deep: #8E3815;
+    --sage: #6B7561;
+    --line: rgba(20, 17, 13, 0.12);
+    --line-soft: rgba(20, 17, 13, 0.06);
+    --noise-opacity: 0.025;
+  }
+  
+  html {
+    color-scheme: light;
+    background: #F2EDE2;
+  }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #F2EDE2 !important;
+    color: #14110D;
+    line-height: 1.55;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Removed paper grain overlay — was causing rendering issues on iOS */
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  *::selection { background: var(--rust); color: var(--paper); }
+
+  html { scroll-behavior: smooth; }
+
+  .wrap { max-width: 1400px; margin: 0 auto; padding: 0 32px; }
+
+  h1, h2, h3, .display {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    font-variation-settings: 'opsz' 144, 'SOFT' 50;
+  }
+
+  em { font-style: italic; }
+
+  /* ───────────── NAV ───────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    padding: 22px 0;
+    z-index: 100;
+    background: rgba(242, 237, 226, 0.78);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s, padding 0.3s;
+  }
+  nav.scrolled { 
+    border-bottom-color: var(--line);
+    padding: 16px 0;
+  }
+  nav .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .brand {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .brand-mark {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .brand-mark::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--rust) 50%, transparent 50%);
+  }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .nav-link {
+    font-size: 14px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-link:hover { color: var(--rust); }
+  .nav-cta {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 11px 22px 12px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-cta:hover {
+    background: var(--rust);
+    transform: translateY(-1px);
+  }
+  .nav-cta::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #5DBD7E;
+    box-shadow: 0 0 0 0 #5DBD7E;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(93, 189, 126, 0.6); }
+    70% { box-shadow: 0 0 0 8px rgba(93, 189, 126, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(93, 189, 126, 0); }
+  }
+  @media (max-width: 700px) {
+    .nav-link { display: none; }
+  }
+
+  /* ───────────── HERO ───────────── */
+  .hero {
+    padding: 140px 0 80px;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #F2EDE2;
+    color: #14110D;
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 60px;
+    align-items: end;
+    width: 100%;
+  }
+  .hero-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 36px;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  .hero-meta-bar {
+    width: 36px; height: 1px;
+    background: var(--rust);
+  }
+  .hero-meta-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--rust);
+  }
+  .hero h1 {
+    font-size: clamp(56px, 9.5vw, 156px);
+    font-variation-settings: 'opsz' 144, 'SOFT' 30, 'wght' 380;
+    margin-bottom: 36px;
+    color: var(--ink);
+  }
+  .hero h1 em {
+    color: var(--rust);
+    font-variation-settings: 'opsz' 144, 'SOFT' 100, 'wght' 380;
+  }
+  .hero h1 .nudge { display: inline-block; margin-left: 0.1em; }
+  .hero-tagline {
+    max-width: 460px;
+    font-size: 19px;
+    color: var(--ink-2);
+    margin-bottom: 40px;
+    line-height: 1.5;
+  }
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    cursor: pointer;
+    border: none;
+    font-family: inherit;
+  }
+  .btn-primary {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 20px 32px;
+    border-radius: 100px;
+    font-size: 15px;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-primary::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--rust);
+    border-radius: 100px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+  }
+  .btn-primary > * { position: relative; z-index: 1; }
+  .btn-primary:hover::before { transform: scaleX(1); }
+  .btn-primary:hover { transform: translateY(-2px); }
+  .btn-arrow {
+    width: 18px; height: 18px;
+    transition: transform 0.3s;
+  }
+  .btn-primary:hover .btn-arrow { transform: translateX(4px); }
+  .btn-text {
+    color: var(--ink);
+    font-size: 15px;
+    padding: 20px 4px;
+    position: relative;
+  }
+  .btn-text::after {
+    content: '';
+    position: absolute;
+    left: 4px; right: 4px; bottom: 16px;
+    height: 1px;
+    background: var(--ink);
+    transform-origin: right;
+    transition: transform 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+  }
+  .btn-text:hover::after { transform-origin: left; }
+  .btn-text:hover { color: var(--rust); }
+  .btn-text:hover::after { background: var(--rust); }
+
+  .hero-visual {
+    position: relative;
+    aspect-ratio: 3/4;
+    border-radius: 2px;
+    overflow: hidden;
+    background: var(--paper-3);
+  }
+  .hero-visual img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: contrast(1.02) saturate(0.95);
+  }
+  .hero-visual::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(20, 17, 13, 0.45) 100%);
+  }
+  .hero-visual-tag {
+    position: absolute;
+    bottom: 24px; left: 24px;
+    color: var(--paper);
+    z-index: 2;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 18px;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+  }
+  .hero-visual-num {
+    position: absolute;
+    top: 24px; right: 24px;
+    color: var(--paper);
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    z-index: 2;
+    text-shadow: 0 1px 8px rgba(0,0,0,0.3);
+  }
+
+  .hero-side-info {
+    position: absolute;
+    bottom: 80px; right: 32px;
+    text-align: right;
+    font-size: 12px;
+    color: var(--ink-mute);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+  .hero-side-info strong { color: var(--ink); font-weight: 500; }
+  @media (max-width: 1100px) {
+    .hero-side-info { display: none; }
+  }
+
+  /* ───────────── MARQUEE ───────────── */
+  .marquee {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+    padding: 22px 0;
+    background: #F2EDE2 !important;
+    color: #14110D !important;
+  }
+  .marquee-track {
+    display: flex;
+    gap: 60px;
+    white-space: nowrap;
+    animation: scroll 40s linear infinite;
+    width: max-content;
+  }
+  .marquee-item {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    font-style: italic;
+    color: var(--ink);
+    display: inline-flex;
+    align-items: center;
+    gap: 60px;
+  }
+  .marquee-item::after {
+    content: '✦';
+    color: var(--rust);
+    font-style: normal;
+    font-size: 14px;
+  }
+  @keyframes scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  /* ───────────── SECTIONS ───────────── */
+  section { padding: 130px 0; position: relative; background: #F2EDE2; color: #14110D; }
+  @media (max-width: 700px) { section { padding: 80px 0; } }
+
+  .section-num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--rust);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: inline-block;
+  }
+  .section-head { margin-bottom: 80px; }
+  .section-head h2 {
+    font-size: clamp(40px, 6vw, 92px);
+    font-variation-settings: 'opsz' 144, 'SOFT' 30, 'wght' 380;
+    max-width: 900px;
+  }
+  .section-head h2 em {
+    color: var(--rust);
+    font-variation-settings: 'opsz' 144, 'SOFT' 100, 'wght' 380;
+  }
+  .section-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-bottom: 80px;
+    align-items: end;
+  }
+  .section-intro p {
+    font-size: 18px;
+    color: var(--ink-2);
+    max-width: 520px;
+  }
+
+  /* ───────────── STATS BAND ───────────── */
+  .stats {
+    background: #0A0907 !important;
+    color: #FFFFFF !important;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .stats::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 20% 30%, rgba(194, 85, 42, 0.10) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 70%, rgba(107, 117, 97, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .stats .wrap { position: relative; z-index: 2; }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    position: relative;
+    z-index: 2;
+  }
+  .stat {
+    padding: 0 32px;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  .stat:first-child { border-left: none; padding-left: 0; }
+  .stat-num {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(48px, 6vw, 84px);
+    font-variation-settings: 'opsz' 144, 'SOFT' 50, 'wght' 400;
+    color: #FFFFFF;
+    line-height: 1;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+  }
+  .stat-num em {
+    font-size: 0.5em;
+    color: #F0B58E;
+    font-style: italic;
+  }
+  .stat-label {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #FFFFFF;
+    font-weight: 600;
+  }
+  @media (max-width: 800px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+    .stat { padding: 0; border-left: none; }
+  }
+
+  /* ───────────── SERVICES ───────────── */
+  .services-list {
+    border-top: 1px solid var(--line);
+  }
+  .service {
+    border-bottom: 1px solid var(--line);
+    padding: 40px 0;
+    display: grid;
+    grid-template-columns: 80px 1fr 2fr 1fr;
+    gap: 40px;
+    align-items: start;
+    transition: padding 0.3s;
+    cursor: pointer;
+    position: relative;
+  }
+  .service:hover {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .service::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--paper-2);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: -1;
+  }
+  .service:hover::before { opacity: 1; }
+  .service-num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--rust);
+  }
+  .service-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(28px, 3vw, 42px);
+    font-variation-settings: 'opsz' 144, 'SOFT' 50, 'wght' 380;
+    line-height: 1.05;
+  }
+  .service-desc {
+    font-size: 16px;
+    color: var(--ink-2);
+    line-height: 1.55;
+  }
+  .service-tags {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--ink-mute);
+    font-feature-settings: 'tnum';
+  }
+  .service-tag::before {
+    content: '— ';
+    color: var(--rust);
+  }
+  @media (max-width: 800px) {
+    .service { grid-template-columns: 60px 1fr; }
+    .service-desc, .service-tags { grid-column: 2; }
+  }
+
+  /* ───────────── PROCESS ───────────── */
+  .process-section {
+    background: #E8E0CF !important;
+    color: #14110D !important;
+  }
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .process-step {
+    padding: 56px 32px;
+    border-right: 1px solid var(--line);
+    position: relative;
+    transition: background 0.3s;
+  }
+  .process-step:last-child { border-right: none; }
+  .process-step:hover { background: var(--paper); }
+  .process-step-num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--rust);
+    letter-spacing: 0.2em;
+    margin-bottom: 32px;
+    display: block;
+  }
+  .process-step h3 {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  .process-step p {
+    color: var(--ink-soft);
+    font-size: 15px;
+    max-width: 280px;
+  }
+  @media (max-width: 800px) {
+    .process-grid { grid-template-columns: 1fr 1fr; }
+    .process-step:nth-child(2) { border-right: none; }
+    .process-step:nth-child(1), .process-step:nth-child(2) {
+      border-bottom: 1px solid var(--line);
+    }
+  }
+  @media (max-width: 500px) {
+    .process-grid { grid-template-columns: 1fr; }
+    .process-step { border-right: none; border-bottom: 1px solid var(--line); }
+    .process-step:last-child { border-bottom: none; }
+  }
+
+  /* ───────────── GALLERY ───────────── */
+  .gallery-section .section-head { margin-bottom: 60px; }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 16px;
+  }
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    background: var(--paper-3);
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+    filter: contrast(1.02) saturate(0.95);
+  }
+  .gallery-item:hover img { transform: scale(1.04); }
+  .gallery-item-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    padding: 24px;
+    background: linear-gradient(to top, rgba(20,17,13,0.85), transparent);
+    color: var(--paper);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.4s;
+    z-index: 2;
+  }
+  .gallery-item:hover .gallery-item-overlay {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .gallery-item-tag {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+  .gallery-item-loc {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    opacity: 0.8;
+  }
+
+  .gallery-item:nth-child(1) { grid-column: span 7; aspect-ratio: 4/3; }
+  .gallery-item:nth-child(2) { grid-column: span 5; aspect-ratio: 4/3; }
+  .gallery-item:nth-child(3) { grid-column: span 4; aspect-ratio: 1; }
+  .gallery-item:nth-child(4) { grid-column: span 4; aspect-ratio: 1; }
+  .gallery-item:nth-child(5) { grid-column: span 4; aspect-ratio: 1; }
+
+  @media (max-width: 800px) {
+    .gallery { grid-template-columns: 1fr 1fr; }
+    .gallery-item:nth-child(1) { grid-column: span 2; aspect-ratio: 3/2; }
+    .gallery-item:nth-child(2),
+    .gallery-item:nth-child(3),
+    .gallery-item:nth-child(4),
+    .gallery-item:nth-child(5) { grid-column: span 1; aspect-ratio: 1; }
+  }
+
+  /* ───────────── TESTIMONIALS ───────────── */
+  .testimonials-section {
+    background: #14110D !important;
+    color: #FFFFFF !important;
+  }
+  .testimonials-section .section-num { color: #F0B58E; }
+  .testimonials-section .section-head h2 em { color: #F0B58E; }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-top: 40px;
+  }
+  .testimonial {
+    padding: 48px 0 0;
+    border-top: 1px solid rgba(242, 237, 226, 0.3);
+    position: relative;
+  }
+  .testimonial-stars {
+    color: #F0B58E;
+    margin-bottom: 24px;
+    font-size: 18px;
+    letter-spacing: 4px;
+  }
+  .testimonial-text {
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    line-height: 1.45;
+    margin-bottom: 32px;
+    font-variation-settings: 'opsz' 144, 'SOFT' 50, 'wght' 380;
+    color: #FFFFFF;
+  }
+  .testimonial-quote-mark {
+    font-family: 'Fraunces', serif;
+    font-size: 80px;
+    color: #F0B58E;
+    line-height: 0.5;
+    display: block;
+    margin-bottom: 0;
+    height: 30px;
+    font-style: italic;
+  }
+  .testimonial-author {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+  }
+  .testimonial-author::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: #F0B58E;
+  }
+  @media (max-width: 800px) {
+    .testimonials-grid { grid-template-columns: 1fr; gap: 24px; }
+  }
+
+  /* ───────────── SERVICE AREA ───────────── */
+  .area-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 100px;
+    align-items: start;
+  }
+  .area-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 60px;
+  }
+  .area-item {
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 17px;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-feature-settings: 'tnum';
+    transition: color 0.2s;
+    cursor: default;
+  }
+  .area-item:hover { color: var(--rust); }
+  .area-item-num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-mute);
+    width: 24px;
+  }
+  @media (max-width: 800px) {
+    .area-grid { grid-template-columns: 1fr; gap: 40px; }
+    .area-list { grid-template-columns: 1fr; }
+  }
+
+  /* ───────────── CONTACT ───────────── */
+  .contact-section {
+    background: #E8E0CF !important;
+    color: #14110D !important;
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+  }
+  .contact-info h2 {
+    font-size: clamp(40px, 5vw, 76px);
+    margin-bottom: 32px;
+  }
+  .contact-info > p {
+    font-size: 18px;
+    color: var(--ink-2);
+    margin-bottom: 56px;
+    max-width: 480px;
+  }
+  .contact-method {
+    padding: 24px 0;
+    border-top: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: padding-left 0.3s, gap 0.3s;
+    text-decoration: none;
+    color: inherit;
+  }
+  .contact-method:last-child { border-bottom: 1px solid var(--line); }
+  .contact-method:hover { padding-left: 8px; gap: 24px; }
+  .contact-method:hover .contact-icon {
+    background: var(--rust);
+    color: var(--paper);
+    transform: rotate(-8deg);
+  }
+  .contact-method:hover .contact-method-value { color: var(--rust); }
+  .contact-icon {
+    flex-shrink: 0;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--ink);
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .contact-icon svg { width: 22px; height: 22px; }
+  .contact-method-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .contact-method-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--ink-mute);
+    font-weight: 500;
+  }
+  .contact-method-value {
+    font-family: 'Fraunces', serif;
+    font-size: 24px;
+    color: var(--ink);
+    text-decoration: none;
+    transition: color 0.2s;
+    line-height: 1.2;
+  }
+  @media (max-width: 500px) {
+    .contact-method-value { font-size: 20px; }
+    .contact-icon { width: 44px; height: 44px; }
+    .contact-icon svg { width: 18px; height: 18px; }
+  }
+
+  /* Instagram preview card */
+  .ig-card {
+    margin-top: 32px;
+    background: linear-gradient(135deg, #FCAF45 0%, #E1306C 50%, #5851DB 100%);
+    padding: 2px;
+    border-radius: 16px;
+    transition: transform 0.3s;
+  }
+  .ig-card:hover { transform: translateY(-2px); }
+  .ig-card-inner {
+    background: var(--paper);
+    border-radius: 14px;
+    padding: 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none;
+  }
+  .ig-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FCAF45 0%, #E1306C 50%, #5851DB 100%);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 600;
+  }
+  .ig-info { flex: 1; min-width: 0; }
+  .ig-handle {
+    font-family: 'Fraunces', serif;
+    font-size: 18px;
+    color: var(--ink);
+    font-weight: 500;
+    margin-bottom: 2px;
+    display: block;
+  }
+  .ig-meta {
+    font-size: 13px;
+    color: var(--ink-mute);
+    display: flex;
+    gap: 14px;
+  }
+  .ig-meta strong { color: var(--ink); font-weight: 600; }
+  .ig-follow-btn {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 10px 18px;
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s;
+    flex-shrink: 0;
+  }
+  .ig-card-inner:hover .ig-follow-btn { background: var(--rust); }
+  @media (max-width: 500px) {
+    .ig-card-inner { flex-wrap: wrap; gap: 14px; }
+    .ig-follow-btn { width: 100%; text-align: center; padding: 12px; }
+  }
+
+  form {
+    background: var(--paper);
+    padding: 48px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+  }
+  form h3 {
+    font-size: 32px;
+    margin-bottom: 8px;
+  }
+  form .form-sub {
+    color: var(--ink-soft);
+    font-size: 15px;
+    margin-bottom: 40px;
+  }
+  .field { margin-bottom: 24px; }
+  .field-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  label {
+    display: block;
+    font-size: 12px;
+    color: var(--ink-mute);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 500;
+  }
+  input, textarea, select {
+    width: 100%;
+    padding: 14px 0;
+    border: none;
+    border-bottom: 1px solid var(--line);
+    background: transparent;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    color: var(--ink);
+    transition: border-color 0.2s;
+  }
+  input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-bottom-color: var(--rust);
+  }
+  textarea { resize: vertical; min-height: 80px; }
+  select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%2314110D' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 4px center;
+    padding-right: 24px;
+  }
+  button[type="submit"] {
+    width: 100%;
+    background: var(--ink);
+    color: var(--paper);
+    border: none;
+    padding: 22px;
+    border-radius: 100px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 16px;
+    transition: all 0.25s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    position: relative;
+    overflow: hidden;
+  }
+  button[type="submit"]::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--rust);
+    transform: translateX(-100%);
+    transition: transform 0.4s cubic-bezier(0.7, 0, 0.3, 1);
+  }
+  button[type="submit"] > * { position: relative; z-index: 1; }
+  button[type="submit"]:hover::before { transform: translateX(0); }
+
+  @media (max-width: 800px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 60px; }
+    form { padding: 32px 24px; }
+    .field-row { grid-template-columns: 1fr; gap: 0; }
+  }
+
+  /* ───────────── FOOTER ───────────── */
+  footer {
+    background: #14110D !important;
+    color: #FFFFFF !important;
+    padding: 100px 0 30px;
+    position: relative;
+    overflow: hidden;
+  }
+  .footer-display {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(56px, 12vw, 200px);
+    font-variation-settings: 'opsz' 144, 'SOFT' 50, 'wght' 350;
+    color: #FFFFFF;
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    margin-bottom: 60px;
+  }
+  .footer-display em {
+    color: #F0B58E;
+    font-variation-settings: 'opsz' 144, 'SOFT' 100, 'wght' 350;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    padding-top: 60px;
+    border-top: 1px solid rgba(242, 237, 226, 0.3);
+    margin-bottom: 60px;
+  }
+  footer h4 {
+    color: #FFFFFF;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 24px;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+  }
+  footer p, footer a {
+    color: #FFFFFF;
+    font-size: 14px;
+    text-decoration: none;
+    line-height: 1.9;
+    display: block;
+  }
+  footer a { transition: color 0.2s; }
+  footer a:hover { color: #F0B58E; }
+  .footer-bottom {
+    padding-top: 30px;
+    border-top: 1px solid rgba(242, 237, 226, 0.3);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 12px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  @media (max-width: 800px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  }
+  @media (max-width: 500px) {
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ───────────── ANIMATIONS ───────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .hero h1 .word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+  .hero h1 .word:nth-child(1) { animation-delay: 0.1s; }
+  .hero h1 .word:nth-child(2) { animation-delay: 0.2s; }
+  .hero h1 .word:nth-child(3) { animation-delay: 0.3s; }
+  .hero h1 .word:nth-child(4) { animation-delay: 0.4s; }
+  .hero h1 .word:nth-child(5) { animation-delay: 0.5s; }
+  .hero-tagline { animation: fadeUp 1.2s 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) backwards; }
+  .hero-cta { animation: fadeUp 1.2s 0.75s cubic-bezier(0.2, 0.8, 0.2, 1) backwards; }
+  .hero-meta { animation: fadeUp 1s 0.05s cubic-bezier(0.2, 0.8, 0.2, 1) backwards; }
+  .hero-visual { animation: fadeUp 1.4s 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) backwards; }
+
+  /* Responsive hero */
+  @media (max-width: 900px) {
+    .hero { padding: 120px 0 60px; min-height: auto; }
+    .hero-grid { grid-template-columns: 1fr; gap: 50px; }
+    .hero-visual { max-width: 460px; aspect-ratio: 4/5; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ━━━━━━━━━━ NAV ━━━━━━━━━━ -->
+<nav id="nav">
+  <div class="wrap">
+    <a href="#" class="brand">
+      <span class="brand-mark"></span>
+      Innova Pro
+    </a>
+    <div class="nav-right">
+      <a href="#work" class="nav-link">Work</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="tel:+16193626422" class="nav-cta">(619) 362-6422</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ━━━━━━━━━━ HERO ━━━━━━━━━━ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-meta">
+          <span class="hero-meta-bar"></span>
+          <span>Chula Vista · Est. 2014</span>
+          <span class="hero-meta-dot"></span>
+          <span>Licensed & Insured</span>
+        </div>
+        <h1>
+          <span class="word">Painted</span>
+          <span class="word">with</span>
+          <span class="word"><em>care.</em></span>
+          <span class="word">Built</span>
+          <span class="word">to last.</span>
+        </h1>
+        <p class="hero-tagline">A family-run painting crew that treats your home like it's our own. Honest quotes, careful prep, and finishes that hold up to South Bay sun — for over a decade.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">
+            <span>Get a Free Estimate</span>
+            <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M5 12h14M13 5l7 7-7 7"/>
+            </svg>
+          </a>
+          <a href="tel:+16193626422" class="btn btn-text">or call (619) 362-6422</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <span class="hero-visual-num">01 / Featured</span>
+        <!-- HERO IMAGE — Replace with Carlos's best exterior or interior photo -->
+        <img data-photo="REPLACE-ME" alt="Recent painting project" 
+             src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80"
+             onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #C2552A 0%, #4D2616 100%)';">
+        <span class="hero-visual-tag">Eastlake Residence — Exterior Refresh</span>
+      </div>
+    </div>
+    <div class="hero-side-info">
+      Free Estimates<br>
+      <strong>Veterans &amp; First Responders<br>Discount Available</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ MARQUEE ━━━━━━━━━━ -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="marquee-item">Interior Painting</span>
+    <span class="marquee-item">Exterior Painting</span>
+    <span class="marquee-item">Cabinet Refinishing</span>
+    <span class="marquee-item">Stucco &amp; Repair</span>
+    <span class="marquee-item">Popcorn Removal</span>
+    <span class="marquee-item">Color Consultation</span>
+    <!-- duplicated for seamless loop -->
+    <span class="marquee-item">Interior Painting</span>
+    <span class="marquee-item">Exterior Painting</span>
+    <span class="marquee-item">Cabinet Refinishing</span>
+    <span class="marquee-item">Stucco &amp; Repair</span>
+    <span class="marquee-item">Popcorn Removal</span>
+    <span class="marquee-item">Color Consultation</span>
+  </div>
+</div>
+
+<!-- ━━━━━━━━━━ STATS ━━━━━━━━━━ -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-num">10<em>+</em></div>
+        <div class="stat-label">Years in Trade</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">500<em>+</em></div>
+        <div class="stat-label">Homes Painted</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">5<em>★</em></div>
+        <div class="stat-label">Average Rating</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">24<em>h</em></div>
+        <div class="stat-label">Quote Turnaround</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ SERVICES ━━━━━━━━━━ -->
+<section id="services">
+  <div class="wrap">
+    <div class="section-intro">
+      <div>
+        <span class="section-num">— 02 / Services</span>
+        <h2 class="reveal">What we do, <em>done right.</em></h2>
+      </div>
+      <p class="reveal">From single rooms to full exteriors. We use premium paint, prep every surface properly, and back our exterior work in writing.</p>
+    </div>
+
+    <div class="services-list">
+      <div class="service reveal">
+        <div class="service-num">01</div>
+        <div class="service-title">Interior<br>Painting</div>
+        <div class="service-desc">Walls, ceilings, trim, doors. We protect your floors and furniture, prep every surface, and leave the space cleaner than we found it. Most rooms done in a single day.</div>
+        <div class="service-tags">
+          <span class="service-tag">Full repaints</span>
+          <span class="service-tag">Trim &amp; doors</span>
+          <span class="service-tag">Ceilings</span>
+          <span class="service-tag">Color consult</span>
+        </div>
+      </div>
+      <div class="service reveal">
+        <div class="service-num">02</div>
+        <div class="service-title">Exterior<br>Painting</div>
+        <div class="service-desc">Stucco, wood, vinyl, brick. Coastal-rated paints built for South Bay weather. Pressure wash, full prep, two coats, and a written warranty on every exterior job.</div>
+        <div class="service-tags">
+          <span class="service-tag">Full house</span>
+          <span class="service-tag">Stucco repair</span>
+          <span class="service-tag">Trim &amp; fascia</span>
+          <span class="service-tag">Decks &amp; fences</span>
+        </div>
+      </div>
+      <div class="service reveal">
+        <div class="service-num">03</div>
+        <div class="service-title">Cabinet<br>Refinishing</div>
+        <div class="service-desc">Transform kitchens and baths without replacing cabinets. Sprayed factory-smooth finish that holds up to daily use, dramatically cheaper than a remodel.</div>
+        <div class="service-tags">
+          <span class="service-tag">Kitchens</span>
+          <span class="service-tag">Vanities</span>
+          <span class="service-tag">Built-ins</span>
+          <span class="service-tag">Hardware</span>
+        </div>
+      </div>
+      <div class="service reveal">
+        <div class="service-num">04</div>
+        <div class="service-title">Specialty<br>Work</div>
+        <div class="service-desc">Popcorn ceiling removal, paint stripping, drywall patching, light texture work. The detail jobs that other crews skip — we handle them properly.</div>
+        <div class="service-tags">
+          <span class="service-tag">Popcorn removal</span>
+          <span class="service-tag">Paint removal</span>
+          <span class="service-tag">Texture match</span>
+          <span class="service-tag">Repairs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ PROCESS ━━━━━━━━━━ -->
+<section class="process-section" id="about">
+  <div class="wrap">
+    <div class="section-intro">
+      <div>
+        <span class="section-num">— 03 / Process</span>
+        <h2 class="reveal">No surprises, <em>start to finish.</em></h2>
+      </div>
+      <p class="reveal">You'll know exactly what's happening, what it costs, and when we'll be done — before we ever pick up a brush. That's the Innova standard.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step reveal">
+        <span class="process-step-num">— Step 01</span>
+        <h3>Free Estimate</h3>
+        <p>We come to you, walk the project, and send a written quote within 24 hours. No pressure.</p>
+      </div>
+      <div class="process-step reveal">
+        <span class="process-step-num">— Step 02</span>
+        <h3>Color &amp; Plan</h3>
+        <p>We help you pick colors that work for your home. Clear timeline, prep needed, and what to expect each day.</p>
+      </div>
+      <div class="process-step reveal">
+        <span class="process-step-num">— Step 03</span>
+        <h3>Careful Work</h3>
+        <p>We protect your space, prep every surface properly, and use premium paint. No shortcuts, ever.</p>
+      </div>
+      <div class="process-step reveal">
+        <span class="process-step-num">— Step 04</span>
+        <h3>Final Walkthrough</h3>
+        <p>We don't leave until you're 100% happy. Full clean-up included. Warranty in writing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ GALLERY ━━━━━━━━━━ -->
+<section class="gallery-section" id="work">
+  <div class="wrap">
+    <div class="section-intro">
+      <div>
+        <span class="section-num">— 04 / Selected Work</span>
+        <h2 class="reveal">Recent <em>projects.</em></h2>
+      </div>
+      <p class="reveal">A small selection of homes and businesses we've painted across Chula Vista, Eastlake, Otay Ranch, Bonita, and greater San Diego.</p>
+    </div>
+    <div class="gallery">
+      <div class="gallery-item reveal">
+        <img data-photo="REPLACE-ME" alt="Modern home exterior repaint"
+             src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80"
+             onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #C2552A 0%, #4D2616 100%)';">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-tag">Full Exterior Refresh</div>
+          <div class="gallery-item-loc">Eastlake — 2024</div>
+        </div>
+      </div>
+      <div class="gallery-item reveal">
+        <img data-photo="REPLACE-ME" alt="Bright living room interior"
+             src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&auto=format&fit=crop&w=900&q=80"
+             onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #D4A574 0%, #8B6F47 100%)';">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-tag">Living &amp; Dining</div>
+          <div class="gallery-item-loc">Chula Vista — 2024</div>
+        </div>
+      </div>
+      <div class="gallery-item reveal">
+        <img data-photo="REPLACE-ME" alt="Painted kitchen cabinets"
+             src="https://images.unsplash.com/photo-1556909195-29bdf3a13f7c?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80"
+             onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #6B7561 0%, #2B2A22 100%)';">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-tag">Cabinet Refinish</div>
+          <div class="gallery-item-loc">Otay Ranch — 2024</div>
+        </div>
+      </div>
+      <div class="gallery-item reveal">
+        <img data-photo="REPLACE-ME" alt="Bedroom interior repaint"
+             src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80"
+             onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #8B6F47 0%, #3A2D1A 100%)';">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-tag">Master Bedroom</div>
+          <div class="gallery-item-loc">Bonita — 2023</div>
+        </div>
+      </div>
+      <div class="gallery-item reveal">
+        <img data-photo="REPLACE-ME" alt="Painter at work"
+             src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80"
+             onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #C9876B 0%, #6B3621 100%)';">
+        <div class="gallery-item-overlay">
+          <div class="gallery-item-tag">In Progress</div>
+          <div class="gallery-item-loc">San Diego — 2024</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ TESTIMONIALS ━━━━━━━━━━ -->
+<section class="testimonials-section">
+  <div class="wrap">
+    <div class="section-intro">
+      <div>
+        <span class="section-num">— 05 / Reviews</span>
+        <h2 class="reveal">What our <em>neighbors say.</em></h2>
+      </div>
+      <p class="reveal" style="color: #FFFFFF;">Real reviews from real Chula Vista homeowners. More on Yelp, Thumbtack, and Google.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial reveal">
+        <span class="testimonial-quote-mark">"</span>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">Carlos and his helper arrived right on time and finished a 3-day job in 2. Bathrooms came out great. Professional, polite, hard workers.</p>
+        <div class="testimonial-author">Verified Customer · Thumbtack</div>
+      </div>
+      <div class="testimonial reveal">
+        <span class="testimonial-quote-mark">"</span>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">Carlos was responsive, gave a fair quote, and his care for my home was more than I could have asked for. Highly recommend.</p>
+        <div class="testimonial-author">Verified Customer · Thumbtack</div>
+      </div>
+      <div class="testimonial reveal">
+        <span class="testimonial-quote-mark">"</span>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">Great experience with Carlos. He painted two bedrooms in one day. Quality was excellent — going back to him for future projects.</p>
+        <div class="testimonial-author">Emmanuel M. · Thumbtack</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ SERVICE AREA ━━━━━━━━━━ -->
+<section>
+  <div class="wrap">
+    <div class="area-grid">
+      <div>
+        <span class="section-num">— 06 / Service Area</span>
+        <h2 class="reveal" style="font-size: clamp(40px, 5vw, 80px);">South Bay <em>and beyond.</em></h2>
+        <p style="color: var(--ink-2); font-size: 18px; margin-top: 24px; max-width: 420px;" class="reveal">Based in Chula Vista, serving the South Bay and greater San Diego. Not sure if we cover your area? Just call.</p>
+      </div>
+      <div class="area-list reveal">
+        <div class="area-item"><span class="area-item-num">01</span>Chula Vista</div>
+        <div class="area-item"><span class="area-item-num">02</span>Eastlake</div>
+        <div class="area-item"><span class="area-item-num">03</span>Otay Ranch</div>
+        <div class="area-item"><span class="area-item-num">04</span>Bonita</div>
+        <div class="area-item"><span class="area-item-num">05</span>San Diego</div>
+        <div class="area-item"><span class="area-item-num">06</span>Poway</div>
+        <div class="area-item"><span class="area-item-num">07</span>Carlsbad</div>
+        <div class="area-item"><span class="area-item-num">08</span>Encinitas</div>
+        <div class="area-item"><span class="area-item-num">09</span>Oceanside</div>
+        <div class="area-item"><span class="area-item-num">10</span>Temecula</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ CONTACT ━━━━━━━━━━ -->
+<section class="contact-section" id="contact">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <span class="section-num">— 07 / Contact</span>
+        <h2 class="reveal">Free <em>estimates.</em><br>No pressure.</h2>
+        <p class="reveal">Tell us about your project. We get back to you within 24 hours — usually same day.</p>
+
+        <a href="tel:+16193626422" class="contact-method">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+          </div>
+          <div class="contact-method-text">
+            <span class="contact-method-label">Call or Text</span>
+            <span class="contact-method-value">(619) 362-6422</span>
+          </div>
+        </a>
+
+        <a href="mailto:info@innovapropainting.com" class="contact-method">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div class="contact-method-text">
+            <span class="contact-method-label">Email</span>
+            <span class="contact-method-value">info@innovapropainting.com</span>
+          </div>
+        </a>
+
+        <a href="https://instagram.com/innova_pro_painting" target="_blank" rel="noopener" class="contact-method">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </div>
+          <div class="contact-method-text">
+            <span class="contact-method-label">Instagram</span>
+            <span class="contact-method-value">@innova_pro_painting</span>
+          </div>
+        </a>
+
+        <div class="contact-method" style="cursor: default;">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div class="contact-method-text">
+            <span class="contact-method-label">Hours</span>
+            <span class="contact-method-value">Mon–Sat · 7am – 6pm</span>
+          </div>
+        </div>
+      </div>
+
+      <form onsubmit="event.preventDefault(); alert('Thanks! We will call you back within 24 hours.'); this.reset();">
+        <h3>Request an estimate</h3>
+        <p class="form-sub">Quick form. No spam. We'll call you back.</p>
+        <div class="field-row">
+          <div class="field">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="project">Project Type</label>
+          <select id="project" name="project">
+            <option>Interior Painting</option>
+            <option>Exterior Painting</option>
+            <option>Cabinet Refinishing</option>
+            <option>Specialty / Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">Tell us about your project</label>
+          <textarea id="message" name="message" placeholder="Rooms, square footage, timing — anything helps."></textarea>
+        </div>
+        <button type="submit">
+          <span>Request Estimate</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M13 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ FOOTER ━━━━━━━━━━ -->
+<footer>
+  <div class="wrap">
+    <div class="footer-display">
+      Innova<br>Pro <em>Painting.</em>
+    </div>
+    <div class="footer-grid">
+      <div>
+        <h4>About</h4>
+        <p>Family-run painters serving Chula Vista and greater San Diego. Honest work, careful prep, finishes that last.</p>
+        <p style="margin-top: 16px;">CA License #[VERIFY ON CSLB.CA.GOV]<br>Bonded &amp; Insured</p>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <a href="#services">Interior</a>
+        <a href="#services">Exterior</a>
+        <a href="#services">Cabinets</a>
+        <a href="#services">Specialty</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <a href="tel:+16193626422">(619) 362-6422</a>
+        <a href="mailto:info@innovapropainting.com">info@innovapropainting.com</a>
+        <a href="https://instagram.com/innova_pro_painting">Instagram</a>
+      </div>
+      <div>
+        <h4>Service Area</h4>
+        <p>Chula Vista · Eastlake<br>Otay Ranch · Bonita<br>San Diego · Poway<br>Carlsbad · Temecula</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Innova Pro Painting</span>
+      <span>Made in Chula Vista, CA</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll state
+  const nav = document.getElementById('nav');
+  let lastScroll = 0;
+  window.addEventListener('scroll', () => {
+    const s = window.scrollY;
+    if (s > 40) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+    lastScroll = s;
+  });
+
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
+  reveals.forEach((el) => obs.observe(el));
+</script>
+
+</body>
+</html>
